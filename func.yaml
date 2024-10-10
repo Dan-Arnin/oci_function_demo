@@ -1,0 +1,23 @@
+version: 1.0
+name: hello-world-flask
+description: A simple Hello World Flask application.
+runtime: python:3.8  # Specify your Python runtime version
+entrypoint: app.hello_world  # Entry point to your application
+
+# Define the environment variables if needed
+# env:
+#   - MY_ENV_VAR: "value"
+
+# Specify any required packages in requirements.txt
+dependencies:
+  - Flask==2.2.2  # Make sure to use the same version you have locally
+
+# Optionally, specify the memory limit and timeout for your function
+memory: 128  # Memory allocated to the function in MB
+timeout: 30  # Timeout for the function in seconds
+
+# Define the HTTP trigger
+triggers:
+  - type: http
+    method: GET
+    path: /  # The path for your function
